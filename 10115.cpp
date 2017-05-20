@@ -91,9 +91,6 @@ int main()
 
         printf("%s\n",text);
     }
-
-    fclose(input);
-    fclose(output);
-
+    
     return 0;
 }
