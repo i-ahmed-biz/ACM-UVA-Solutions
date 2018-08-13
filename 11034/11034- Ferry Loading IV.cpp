@@ -7,20 +7,16 @@ struct CarInfo {
     string side;
 };
 
-int riverCrossOnOneSide(deque<CarInfo> *queue, long long ferryLength) {
+void loadCarsForOneShift(deque<CarInfo> *queue, long long ferryLength) {
     int carLengthInFerrey = 0;
-    int riverCrossCounter = 0;
     while(!queue->empty()) {
         CarInfo popedCar = queue->front();
         carLengthInFerrey = carLengthInFerrey + popedCar.length;
         if(carLengthInFerrey > ferryLength) {
-            riverCrossCounter++;
-            return riverCrossCounter;
+            break;
         }
         queue->pop_front();
     }
-    riverCrossCounter++;
-    return riverCrossCounter;
 }
 
 int main() {
@@ -57,9 +53,12 @@ int main() {
         }
         
         while(!leftSideQueue.empty() || !rightSideQueue.empty()) {
-            riverCrossCounter = riverCrossCounter + riverCrossOnOneSide(&leftSideQueue, ferryLength);
+            loadCarsForOneShift(&leftSideQueue, ferryLength);
+            riverCrossCounter++;
+            
             if(!leftSideQueue.empty()|| !rightSideQueue.empty()) {
-                riverCrossCounter = riverCrossCounter + riverCrossOnOneSide(&rightSideQueue, ferryLength);
+                loadCarsForOneShift(&rightSideQueue, ferryLength);
+                riverCrossCounter++;
             }
         }
         
