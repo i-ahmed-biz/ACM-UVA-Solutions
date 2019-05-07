@@ -35,11 +35,11 @@ int doUnion(int src, int dest)
 
     if(x != y) {
         if(childCount[x] < childCount[y]) {
-        	childCount[y] = childCount[x] + childCount[y];
+            childCount[y] = childCount[x] + childCount[y];
             nodes[x] = y;
         }
         else {
-        	childCount[x] = childCount[y] + childCount[x];
+            childCount[x] = childCount[y] + childCount[x];
             nodes[y] = x;
         }
         return -1;

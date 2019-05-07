@@ -36,7 +36,7 @@ int main()
 
                     if(b.compare(0,a.size(),a)== 0)
                     {
-                    	answer = true;
+                        answer = true;
                         break;
                     }
                 }
@@ -54,7 +54,7 @@ int main()
         }
         else
         {
-        	codeList.push_back(value);
+            codeList.push_back(value);
         }
     }
     return 0;

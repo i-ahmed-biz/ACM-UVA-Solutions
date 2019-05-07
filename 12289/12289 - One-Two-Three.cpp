@@ -16,18 +16,18 @@ int main()
 
     while(n--) {
         cin>>text;
-    	for(i = 0; i < 3; i++) {
-    	    matchCounter = 0;
+        for(i = 0; i < 3; i++) {
+            matchCounter = 0;
 
-    	    for(j = 0; j < text.length()  && text.length() == words[i].length();j++) {
-    	        if(words[i].c_str()[j] == text.c_str()[j]) {
-    	            matchCounter++;
-    	        }
-    	    }
-    	    if(matchCounter >= text.length() - 1) {
-    	       cout<<(i + 1)<<endl;
-    	    }
-    	}
+            for(j = 0; j < text.length()  && text.length() == words[i].length();j++) {
+                if(words[i].c_str()[j] == text.c_str()[j]) {
+                    matchCounter++;
+                }
+            }
+            if(matchCounter >= text.length() - 1) {
+               cout<<(i + 1)<<endl;
+            }
+        }
 
     }
 

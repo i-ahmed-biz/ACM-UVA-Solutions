@@ -22,37 +22,37 @@ int main()
     cin>>noFriends;
 
     while(1){
-    	remainingMoney.clear();
+        remainingMoney.clear();
 
-    	for(i = 0; i < noFriends; i++) {
-    		cin>>friendsList[i];
-    		remainingMoney[friendsList[i]] = 0;
-    	}
+        for(i = 0; i < noFriends; i++) {
+            cin>>friendsList[i];
+            remainingMoney[friendsList[i]] = 0;
+        }
 
-    	for(i = 0; i < noFriends; i++) {
-    		cin>>currentFriend>>totalGift>>noFriendsGifted;
-    		if(noFriendsGifted == 0) {
-    			continue;
-    		}
-    		giftAmountPerPerson = totalGift / noFriendsGifted;
-    	    remainingMoney[currentFriend] = remainingMoney[currentFriend] - (giftAmountPerPerson) * noFriendsGifted;
+        for(i = 0; i < noFriends; i++) {
+            cin>>currentFriend>>totalGift>>noFriendsGifted;
+            if(noFriendsGifted == 0) {
+                continue;
+            }
+            giftAmountPerPerson = totalGift / noFriendsGifted;
+            remainingMoney[currentFriend] = remainingMoney[currentFriend] - (giftAmountPerPerson) * noFriendsGifted;
 
-    	    for(j = 0; j < noFriendsGifted; j++) {
-    	    	cin>>giftedFriend;
-    	    	remainingMoney[giftedFriend] = remainingMoney[giftedFriend] + giftAmountPerPerson;
-    	    }
-    	}
+            for(j = 0; j < noFriendsGifted; j++) {
+                cin>>giftedFriend;
+                remainingMoney[giftedFriend] = remainingMoney[giftedFriend] + giftAmountPerPerson;
+            }
+        }
 
-    	for(j = 0; j < noFriends; j++) {
-		    cout<<friendsList[j]<<" "<<remainingMoney[friendsList[j]]<<endl;
-		}
+        for(j = 0; j < noFriends; j++) {
+            cout<<friendsList[j]<<" "<<remainingMoney[friendsList[j]]<<endl;
+        }
 
-    	if(cin>>noFriends) {
-    		cout<<endl;
-    	}
-    	else {
-    		break;
-    	}
+        if(cin>>noFriends) {
+            cout<<endl;
+        }
+        else {
+            break;
+        }
     }
 
     return 0;
